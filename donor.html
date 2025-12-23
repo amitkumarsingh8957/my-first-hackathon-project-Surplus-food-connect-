@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Food Connect | Donor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <a href="index.html">
+                        <h1>Surplus Food Connect</h1>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donor.html" class="active">Food Donor</a></li>
+                    <li><a href="receiver.html">Find Food</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-header">
+                <h2><i class="fas fa-user-circle"></i> Food Donor Dashboard</h2>
+                <p>Post your surplus food details to connect with community partners</p>
+            </section>
+
+            <div class="dashboard-container">
+                <section class="donation-form-section">
+                    <h3><i class="fas fa-edit"></i> Share Surplus Food</h3>
+                    <p>Fill out the form below to share available surplus food</p>
+                    
+                    <form id="foodDonationForm" class="donation-form">
+                        <div class="form-group">
+                            <label for="foodName"><i class="fas fa-utensil-spoon"></i> Food Name</label>
+                            <input type="text" id="foodName" placeholder="e.g., Vegetable Biryani, Sandwiches, Fruit Platter" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity"><i class="fas fa-weight"></i> Quantity</label>
+                            <div class="quantity-input">
+                                <input type="number" id="quantity" min="1" placeholder="e.g., 50" required>
+                                <select id="quantityUnit">
+                                    <option value="servings">Servings</option>
+                                    <option value="kg">Kilograms</option>
+                                    <option value="plates">Plates</option>
+                                    <option value="boxes">Boxes</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location"><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
+                            <input type="text" id="location" placeholder="Full address for food pickup" required>
+                            <small>Please provide the complete address where the food can be collected</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expiryTime"><i class="fas fa-clock"></i> Expiry/Pickup Time</label>
+                            <input type="datetime-local" id="expiryTime" required>
+                            <small>By when should the food be picked up?</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="foodType"><i class="fas fa-tag"></i> Food Type</label>
+                            <select id="foodType">
+                                <option value="cooked">Cooked Meal</option>
+                                <option value="packaged">Packaged Food</option>
+                                <option value="fresh">Fresh Produce</option>
+                                <option value="baked">Baked Goods</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="additionalInfo"><i class="fas fa-info-circle"></i> Additional Information</label>
+                            <textarea id="additionalInfo" rows="3" placeholder="Any special instructions, ingredients, or notes about the food..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-donor btn-large">
+                                <i class="fas fa-paper-plane"></i> Share Food
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Clear Form
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="posted-items-section">
+                    <h3><i class="fas fa-history"></i> Your Shared Food</h3>
+                    <p>Food donations you have shared will appear here with real-time status updates</p>
+                    
+                    <div class="posted-items">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                    
+                    <div class="info-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Your shared food items will appear here automatically. Status updates happen in real-time when community partners make requests.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Surplus Food Connect. Donor Dashboard - Prototype</p>
+            <p><a href="index.html"><i class="fas fa-home"></i> Return to Home</a></p>
+        </footer>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Food Shared Successfully!</h3>
+            <p>Your surplus food listing has been shared. Community partners can now view and request it.</p>
+            <p>Thank you for helping reduce food waste!</p>
+            <button id="closeModal" class="btn btn-donor">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

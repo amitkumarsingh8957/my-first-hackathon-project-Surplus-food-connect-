@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Food Connect | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <a href="index.html">
+                        <h1>Surplus Food Connect</h1>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="login-section">
+                <div class="login-container">
+                    <div class="login-header">
+                        <h2><i class="fas fa-sign-in-alt"></i> Login to Surplus Food Connect</h2>
+                        <p>Please login to access donor and receiver dashboards</p>
+                    </div>
+
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username"><i class="fas fa-user"></i> Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userType"><i class="fas fa-tag"></i> I am a:</label>
+                            <select id="userType" required>
+                                <option value="">Select your role</option>
+                                <option value="donor">Food Donor</option>
+                                <option value="receiver">Food Receiver</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                        </div>
+
+                        <div class="login-footer">
+                            <p>Don't have an account? <a href="#" id="registerLink">Register here</a></p>
+                            <p><small>For demo purposes, use any username/password combination</small></p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Surplus Food Connect. Login Page - Prototype</p>
+            <p><a href="index.html"><i class="fas fa-home"></i> Return to Home</a></p>
+        </footer>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon info">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <h3>Quick Registration</h3>
+            <p>For this prototype, registration is simplified. Just choose a username and password.</p>
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" id="regUsername" placeholder="Choose a username" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="Choose a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="regUserType">I am a:</label>
+                    <select id="regUserType" required>
+                        <option value="donor">Food Donor</option>
+                        <option value="receiver">Community Partnartner</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" id="cancelRegister" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

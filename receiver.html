@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Food Connect | Receiver Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <a href="index.html">
+                        <h1>Surplus Food Connect</h1>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="donor.html">Share Food</a></li>
+                    <li><a href="receiver.html" class="active">Find Food</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-header">
+                <h2><i class="fas fa-user-circle"></i> Find Food Dashboard</h2>
+                <p>Browse available surplus food donations and request what you need</p>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Food</button>
+                    <button class="filter-btn" data-filter="available">Available</button>
+                    <button class="filter-btn" data-filter="requested">Requested</button>
+                    <button class="filter-btn" data-filter="nearby">Nearby</button>
+                </div>
+            </section>
+
+            <div class="dashboard-container">
+                <section class="available-food-section">
+                    <h3><i class="fas fa-utensils"></i> Available Food Donations</h3>
+                    <p>Real-time food donations from local donors. New items appear automatically.</p>
+                    
+                    <div class="food-listings">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                    
+                    <div class="info-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Food donations appear here in real-time. Click "Request Food" to reserve an item. Status updates happen automatically.</p>
+                    </div>
+                </section>
+                
+                <section class="receiver-info">
+                    <h3><i class="fas fa-info-circle"></i> Your Activity</h3>
+                    <div class="info-card">
+                        <h4><i class="fas fa-clipboard-check"></i> Your Requests</h4>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Active Requests</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Food Received</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4><i class="fas fa-lightbulb"></i> Tips for Food Collection</h4>
+                        <ul class="tips-list">
+                            <li><i class="fas fa-check"></i> Always confirm pickup time with donor</li>
+                            <li><i class="fas fa-check"></i> Bring appropriate containers for transport</li>
+                            <li><i class="fas fa-check"></i> Follow food safety guidelines</li>
+                            <li><i class="fas fa-check"></i> Confirm food type matches your needs</li>
+                            <li><i class="fas fa-check"></i> Provide feedback to donors when possible</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Surplus Food Connect. Receiver Dashboard - Prototype</p>
+            <p><a href="index.html"><i class="fas fa-home"></i> Return to Home</a></p>
+        </footer>
+    </div>
+
+    <!-- Request Confirmation Modal -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon info">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h3>Food Request Confirmation</h3>
+            <p id="modalFoodName"></p>
+            <p>Your request has been sent to the donor. They will contact you to coordinate pickup details.</p>
+            <p>Thank you for helping build a sustainable community!</p>
+            <button id="closeRequestModal" class="btn btn-receiver">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
